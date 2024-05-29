@@ -37,8 +37,8 @@ public class ReaderTasklet implements Tasklet, StepExecutionListener {
 	@Override
 	public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		try {
-			lPath = Files.list(Paths.get("C:\\Users\\6002977\\Downloads\\solr-8.11.3\\ejemplo"))
-					.filter(Files::isRegularFile).filter(path -> path.toString().endsWith(".json")).toList();
+			lPath = Files.list(Paths.get("./../ficheroEntrada")).filter(Files::isRegularFile)
+					.filter(path -> path.toString().endsWith(".json")).toList();
 
 		} catch (IOException e) {
 			e.printStackTrace();
